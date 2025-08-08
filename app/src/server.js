@@ -1004,6 +1004,8 @@ function getMeetingURL(host) {
 
 // end of MiroTalk API v1
 
+app.use('/voip', express.static(dir.public, staticOptions));
+
 // not match any of page before, so 404 not found
 app.use((req, res) => {
     res.sendFile(views.notFound);
