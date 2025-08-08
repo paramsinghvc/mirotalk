@@ -4,8 +4,8 @@
         <!-- Title and Icon -->
 
         <title id="clientTitle">MiroTalk WebRTC Video call, Chat Room & Screen Sharing.</title>
-        <link id="icon" rel="shortcut icon" href="../images/logo.svg" />
-        <link id="appleTouchIcon" rel="apple-touch-icon" href="../images/logo.svg" />
+        <link id="icon" rel="shortcut icon" href="/voip/images/logo.svg" />
+        <link id="appleTouchIcon" rel="apple-touch-icon" href="/voip/images/logo.svg" />
 
         <!-- Meta Information -->
 
@@ -32,13 +32,13 @@
         <meta property="og:image" content="{{OG_IMAGE}}" />
         <meta property="og:url" content="{{OG_URL}}" />
 
-        <link rel="icon" type="image/png" sizes="32x32" href="../images/favicon.png" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/voip/images/favicon.png" />
 
         <!-- StyleSheet -->
 
-        <link rel="stylesheet" href="../css/client.css" />
-        <link rel="stylesheet" href="../css/videoGrid.css" />
-        <link rel="stylesheet" href="../css/whiteboard.css" />
+        <link rel="stylesheet" href="/voip/css/client.css" />
+        <link rel="stylesheet" href="/voip/css/videoGrid.css" />
+        <link rel="stylesheet" href="/voip/css/whiteboard.css" />
 
         <!-- https://cdnjs.com/libraries/font-awesome -->
 
@@ -71,7 +71,7 @@
 
         <!-- JavaScripts -->
 
-        <script async src="../js/umami.js"></script>
+        <script async src="/voip/js/umami.js"></script>
     </head>
 
     <body>
@@ -87,7 +87,7 @@
 
         <div id="loadingDiv" class="center pulsate">
             <h1>Loading</h1>
-            <img class="loading-img" src="../images/loading.gif" />
+            <img class="loading-img" src="/voip/images/loading.gif" />
             <pre>
 Please allow the camera or microphone
 access to use this app.
@@ -111,7 +111,7 @@ access to use this app.
                     playsinline="true"
                     autoplay=""
                     class="mirror"
-                    poster="../images/loader.gif"
+                    poster="/voip/images/loader.gif"
                 ></video>
             </div>
             <div class="initComands">
@@ -570,7 +570,7 @@ access to use this app.
                     </div>
 
                     <div id="tabRecording" class="tabcontent">
-                        <img id="recImage" src="../images/recording.png" />
+                        <img id="recImage" src="/voip/images/recording.png" />
                         <div id="recOptions">
                             <table class="settingsTable">
                                 <tr>
@@ -937,7 +937,7 @@ access to use this app.
         <!-- Start File Send -->
 
         <div id="sendFileDiv" class="center fadein">
-            <img id="imgShareSend" src="../images/share.png" alt="mirotalk-share-send" class="center-img" /><br />
+            <img id="imgShareSend" src="/voip/images/share.png" alt="mirotalk-share-send" class="center-img" /><br />
             <div id="sendFileInfo"></div>
             <div id="sendFilePercentage"></div>
             <progress id="sendProgress" max="0" value="0"></progress>
@@ -949,7 +949,7 @@ access to use this app.
         <!-- Start File Receive -->
 
         <div id="receiveFileDiv" class="center fadein">
-            <img id="imgShareReceive" src="../images/share.png" alt="mirotalk-share-receive" class="center-img" /><br />
+            <img id="imgShareReceive" src="/voip/images/share.png" alt="mirotalk-share-receive" class="center-img" /><br />
             <div id="receiveFileInfo"></div>
             <div id="receiveFilePercentage"></div>
             <progress id="receiveProgress" max="0" value="0"></progress>
@@ -1044,18 +1044,18 @@ access to use this app.
         <script async src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
         <script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.10.0/highlight.min.js"></script>
         <script defer src="/socket.io/socket.io.js"></script>
-        <script defer src="../js/localStorage.js"></script>
-        <script defer src="../js/helpers.js"></script>
-        <script defer src="../js/common.js"></script>
-        <script defer src="../js/brand.js"></script>
-        <script defer src="../js/geoLocation.js"></script>
-        <script defer src="../js/detectSpeaking.js"></script>
-        <script defer src="../js/buttons.js"></script>
-        <script defer src="../js/videoGrid.js"></script>
-        <script defer src="../js/translate.js"></script>
-        <script defer src="../js/client.js"></script>
-        <script defer src="../js/speechRecognition.js"></script>
-        <script defer src="../js/nodeProcessor.js"></script>
+        <script defer src="/voip/js/localStorage.js"></script>
+        <script defer src="/voip/js/helpers.js"></script>
+        <script defer src="/voip/js/common.js"></script>
+        <script defer src="/voip/js/brand.js"></script>
+        <script defer src="/voip/js/geoLocation.js"></script>
+        <script defer src="/voip/js/detectSpeaking.js"></script>
+        <script defer src="/voip/js/buttons.js"></script>
+        <script defer src="/voip/js/videoGrid.js"></script>
+        <script defer src="/voip/js/translate.js"></script>
+        <script defer src="/voip/js/client.js"></script>
+        <script defer src="/voip/js/speechRecognition.js"></script>
+        <script defer src="/voip/js/nodeProcessor.js"></script>
 
         <!-- end of Js scripts -->
 
