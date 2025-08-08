@@ -1457,7 +1457,7 @@ function handleButtonsRule() {
  */
 async function getButtons() {
     try {
-        const response = await axios.get('/buttons', {
+        const response = await axios.get('/voip/buttons', {
             timeout: 5000,
         });
         const serverButtons = response.data.message;
@@ -9341,7 +9341,7 @@ function handleEmoji(message, duration = 5000) {
  * @param {object} message
  */
 function handleEmojiSound(message) {
-    const path = '../sounds/emoji/';
+    const path = '/voip/sounds/emoji/';
     switch (message.shortcodes) {
         case ':+1:':
         case ':ok_hand:':
@@ -11679,7 +11679,7 @@ function msgPopup(icon, message, position, timer = 1000) {
  * @param {boolean} force audio
  * @param {string} path of sound files
  */
-async function playSound(name, force = false, path = '../sounds/') {
+async function playSound(name, force = false, path = '/voip/sounds/') {
     if (!notifyBySound && !force) return;
     const sound = path + name + '.mp3';
     const audioToPlay = new Audio(sound);
