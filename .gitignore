@@ -16,7 +16,6 @@ bun.lock
 
 # personal env
 docker-push.sh
-docker-compose.yml
 turnserver.conf
 output
 env.txt
