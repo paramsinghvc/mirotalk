@@ -135,6 +135,7 @@ const corsOptions = {
     Set maxHttpBufferSize from 1e6 (1MB) to 1e7 (10MB)
 */
 const io = new Server({
+    path: '/voip/socket.io',
     maxHttpBufferSize: 1e7,
     transports: ['websocket'],
     cors: corsOptions,

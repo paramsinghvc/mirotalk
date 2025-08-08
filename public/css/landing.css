@@ -2779,7 +2779,7 @@ ul.pricing-item-features-list li {
     height: 1024px;
     /* background-image: url(../images/illustration-section-01.svg); */
     /* background-image: url(../images/bg.svg); */
-    background-image: url(../images/header.png);
+    background-image: url(/voip/images/header.png);
     background-repeat: no-repeat;
     background-size: cover; /*auto*/
     left: 50%;
@@ -2794,7 +2794,7 @@ ul.pricing-item-features-list li {
     width: 100%;
     max-width: 100%;
     height: 612px;
-    background-image: url(../images/illustration-section-02.svg);
+    background-image: url(/voip/images/illustration-section-02.svg);
     background-repeat: no-repeat;
     background-size: auto;
     left: 50%;

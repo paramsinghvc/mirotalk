@@ -48,25 +48,25 @@ const myRoomUrl = window.location.origin + '/join/' + roomId; // share room url
 
 // Images
 const images = {
-    caption: '../images/caption.png',
-    chatgpt: '../images/chatgpt.png',
-    confirmation: '../images/image-placeholder.png',
-    share: '../images/share.png',
-    locked: '../images/locked.png',
-    videoOff: '../images/cam-off.png',
-    audioOff: '../images/audio-off.png',
-    audioGif: '../images/audio.gif',
-    delete: '../images/delete.png',
-    message: '../images/message.png',
-    leave: '../images/leave-room.png',
-    vaShare: '../images/va-share.png',
-    about: '../images/mirotalk-logo.gif',
-    feedback: '../images/feedback.png',
-    forbidden: '../images/forbidden.png',
-    avatar: '../images/mirotalk-logo.png',
-    recording: '../images/recording.png',
-    poster: '../images/loader.gif',
-    geoLocation: '../images/geolocation.png',
+    caption: '/voip/images/caption.png',
+    chatgpt: '/voip/images/chatgpt.png',
+    confirmation: '/voip/images/image-placeholder.png',
+    share: '/voip/images/share.png',
+    locked: '/voip/images/locked.png',
+    videoOff: '/voip/images/cam-off.png',
+    audioOff: '/voip/images/audio-off.png',
+    audioGif: '/voip/images/audio.gif',
+    delete: '/voip/images/delete.png',
+    message: '/voip/images/message.png',
+    leave: '/voip/images/leave-room.png',
+    vaShare: '/voip/images/va-share.png',
+    about: '/voip/images/mirotalk-logo.gif',
+    feedback: '/voip/images/feedback.png',
+    forbidden: '/voip/images/forbidden.png',
+    avatar: '/voip/images/mirotalk-logo.png',
+    recording: '/voip/images/recording.png',
+    poster: '/voip/images/loader.gif',
+    geoLocation: '/voip/images/geolocation.png',
 }; // nice free icon: https://www.iconfinder.com
 
 const className = {
@@ -1163,7 +1163,7 @@ function initClientPeer() {
     console.log('01. Connecting to signaling server');
 
     // Disable the HTTP long-polling transport
-    signalingSocket = io({ transports: ['websocket'] });
+    signalingSocket = io({ path: '/voip/socket.io', transports: ['websocket'] });
 
     const transport = signalingSocket.io.engine.transport.name; // in most cases, "polling"
     console.log('02. Connection transport', transport);

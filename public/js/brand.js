@@ -71,8 +71,8 @@ let brand = {
         joinLastLabel: 'Your recent room:',
     },
     site: {
-        shortcutIcon: '../images/logo.svg',
-        appleTouchIcon: '../images/logo.svg',
+        shortcutIcon: '/voip/images/logo.svg',
+        appleTouchIcon: '/voip/images/logo.svg',
         landingTitle: 'MiroTalk a Free Secure Video Calls, Chat & Screen Sharing.',
         newCallTitle: 'MiroTalk a Free Secure Video Calls, Chat & Screen Sharing.',
         newCallRoomTitle: 'Pick name. <br />Share URL. <br />Start conference.',
@@ -95,7 +95,7 @@ let brand = {
         footer: true,
     },
     about: {
-        imageUrl: '../images/mirotalk-logo.gif',
+        imageUrl: '/voip/images/mirotalk-logo.gif',
         title: 'WebRTC P2P v1.5.53',
         html: `
             <button 
