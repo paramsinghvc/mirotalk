@@ -7,7 +7,7 @@ console.log('STATS', window.location);
 const statsDataKey = 'statsData';
 const statsData = window.sessionStorage.getItem(statsDataKey);
 
-const apiUrl = window.location.origin + '/stats';
+const apiUrl = window.location.origin + '/voip/stats';
 
 if (statsData) {
     setStats(JSON.parse(statsData));

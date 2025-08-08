@@ -146,7 +146,7 @@ async function getBrand() {
         setBrand(JSON.parse(brandData));
     } else {
         try {
-            const response = await fetch('/brand', { timeout: 5000 });
+            const response = await fetch('/voip/brand', { timeout: 5000 });
             if (!response.ok) {
                 throw new Error('Network response was not ok');
             }
