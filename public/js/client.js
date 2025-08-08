@@ -21,6 +21,21 @@
 
 'use strict';
 
+// Flutter event listener
+
+if (!window._flutterPlatformReadyListenerAdded) {
+    window.addEventListener('flutterInAppWebViewPlatformReady', function () {
+        console.log('Flutter Platform is ready');
+
+        // Example: Call handler when the call ends
+        window.callFlutterCallEnded = function (reason = 'default') {
+            window.flutter_inappwebview.callHandler('callEndedHandler', { reason });
+        };
+    });
+
+    window._flutterPlatformReadyListenerAdded = true; // ✅ Prevent duplicate listener
+}
+
 // https://www.w3schools.com/js/js_strict.asp
 
 // Signaling server URL
@@ -449,7 +464,7 @@ const sinkId = 'sinkId' in HTMLMediaElement.prototype;
 
 //....
 
-const isRulesActive = true; // Presenter can do anything, guest is slightly moderate, if false no Rules for the room.
+const isRulesActive = false; // Presenter can do anything, guest is slightly moderate, if false no Rules for the room.
 const forceCamMaxResolutionAndFps = false; // This force the webCam to max resolution as default, up to 8k and 60fps (very high bandwidth are required) if false, you can set it from settings
 const useAvatarSvg = true; // if false the cam-Off avatar = images.avatar
 
@@ -670,7 +685,7 @@ let isHostProtected = false; // Username and Password required to initialize roo
 let isPeerAuthEnabled = false; // Username and Password required in the URL params to join room
 
 // survey
-let surveyActive = true; // when leaving the room give a feedback, if false will be redirected to newcall page
+let surveyActive = false; // when leaving the room give a feedback, if false will be redirected to newcall page
 let surveyURL = 'https://www.questionpro.com/t/AUs7VZq00L';
 
 // Redirect on leave room
@@ -1294,7 +1309,7 @@ function handleServerInfo(config) {
     }
 
     if (notify && peers_count == 1) {
-        shareRoomMeetingURL(true);
+        // shareRoomMeetingURL(true);
     } else {
         checkShareScreen();
     }
@@ -3174,7 +3189,7 @@ async function loadLocalMedia(stream, kind) {
 
             // my peer name
             myPeerName.setAttribute('id', 'myVideoParagraph');
-            myPeerName.className = 'videoPeerName notranslate';
+            myPeerName.className = 'videoPeerName notranslate hidden';
 
             // my hand status element
             myHandStatusIcon.setAttribute('id', 'myHandStatusIcon');
@@ -3250,7 +3265,7 @@ async function loadLocalMedia(stream, kind) {
             myPitchBar.style.height = '1%';
 
             // my video nav bar
-            myVideoNavBar.className = 'navbar fadein';
+            myVideoNavBar.className = 'navbar fadein hidden';
 
             // attach to video nav bar
             myVideoNavBar.appendChild(mySessionTime);
@@ -3453,7 +3468,7 @@ async function loadRemoteMediaStream(stream, peers, peer_id, kind) {
 
             // remote peer name element
             remotePeerName.setAttribute('id', peer_id + '_name');
-            remotePeerName.className = 'videoPeerName';
+            remotePeerName.className = 'videoPeerName hidden';
 
             const peerVideoText = document.createTextNode(peer_name);
             remotePeerName.appendChild(peerVideoText);
@@ -3566,7 +3581,7 @@ async function loadRemoteMediaStream(stream, peers, peer_id, kind) {
             remotePitchMeter.appendChild(remotePitchBar);
 
             // remote video nav bar
-            remoteVideoNavBar.className = 'navbar fadein';
+            remoteVideoNavBar.className = 'navbar fadein hidden';
 
             // remote expand buttons div
             remoteExpandBtnDiv.className = 'expand-video';
@@ -6354,10 +6369,10 @@ async function shareRoomUrl() {
             */
             console.error('Navigator share error', err);
 
-            shareRoomMeetingURL();
+            // shareRoomMeetingURL();
         }
     } else {
-        shareRoomMeetingURL();
+        // shareRoomMeetingURL();
     }
 }
 
@@ -11293,7 +11308,14 @@ function showAbout() {
  */
 function leaveRoom() {
     checkRecording();
-    surveyActive ? leaveFeedback() : redirectOnLeave();
+    // surveyActive ? leaveFeedback() : redirectOnLeave();
+    // redirectOnLeave();
+    if (window.callFlutterCallEnded) {
+        window.callFlutterCallEnded('user_hung_up');
+    } else {
+        window.parent.postMessage('callEnded', '*');
+        console.warn('Flutter handler not ready yet. Postmessage sent');
+    }
 }
 
 /**
