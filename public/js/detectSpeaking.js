@@ -28,7 +28,7 @@ async function getMicrophoneVolumeIndicator(stream) {
             const microphone = audioContext.createMediaStreamSource(stream);
 
             // Create and configure AudioWorkletNode
-            await audioContext.audioWorklet.addModule('/js/volumeProcessor.js');
+            await audioContext.audioWorklet.addModule('/voip/js/volumeProcessor.js');
             workletNode = new AudioWorkletNode(audioContext, 'volume-processor', {
                 processorOptions: {
                     peerId: myPeerId, // Your peer ID

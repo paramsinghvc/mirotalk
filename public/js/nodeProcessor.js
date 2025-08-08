@@ -68,7 +68,7 @@ class WasmLoader {
         try {
             this.uiManager.updateStatus('📦 Loading RNNoise sync module...', 'info');
 
-            const jsResponse = await fetch('../js/rnnoiseSync.js');
+            const jsResponse = await fetch('/voip/js/rnnoiseSync.js');
 
             if (!jsResponse.ok) {
                 throw new Error('Failed to load rnnoiseSync.js');
@@ -138,7 +138,7 @@ class RNNoiseProcessor {
                 throw new Error('No audio tracks found in the provided media stream');
             }
 
-            await this.audioContext.audioWorklet.addModule('../js/noiseSuppressionProcessor.js');
+            await this.audioContext.audioWorklet.addModule('/voip/js/noiseSuppressionProcessor.js');
 
             this.workletNode = new AudioWorkletNode(this.audioContext, 'noiseSuppressionProcessor', {
                 numberOfInputs: 1,

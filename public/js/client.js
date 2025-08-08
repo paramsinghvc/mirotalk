@@ -5407,7 +5407,7 @@ async function documentPictureInPictureOpen() {
 
         pipStylesheet.type = 'text/css';
         pipStylesheet.rel = 'stylesheet';
-        pipStylesheet.href = '../css/documentPiP.css';
+        pipStylesheet.href = '/voip/css/documentPiP.css';
 
         pipVideoContainer.className = 'pipVideoContainer';
 
